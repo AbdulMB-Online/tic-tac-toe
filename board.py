@@ -50,3 +50,24 @@ class Board:
             if i < self._size - 1:
                 lines.append(separator)
         return "\n".join(lines)
+
+    def remove_mark(self, row, col):
+        self._grid[row][col] = EMPTY
+
+    def has_won(self, mark):
+        """Return True if the player has won, otherwise False."""
+
+        for i in range(3):
+            if (self._grid[i][0] == mark and self._grid[i][1] == mark and self._grid[i][2] == mark):
+                return True
+
+            if (self._grid[0][i] == mark and self._grid[1][i] == mark and self._grid[2][i] == mark):
+                return True
+
+        if (self._grid[0][0] == mark and self._grid[1][1] == mark and self._grid[2][2] == mark):
+            return True
+
+        if (self._grid[0][2] == mark and self._grid[1][1] == mark and self._grid[2][0] == mark):
+            return True
+
+        return False
