@@ -51,3 +51,10 @@ B) Multiple classes, each with a specific responsibility.
 Chosen approach: B
 
 Reason: Using multiple classes, each with a specific responsibility, is better when building a Tic Tac Toe game because it separates tasks such as managing the board, handling player moves, and checking win conditions. This makes the game easier to understand, debug, test, modify, and maintain without affecting other parts of the code.
+
+
+## What changed
+
+- Added Board methods for copying the board and removing marks to support minimax without changing the active game board.
+- Added explicit winner, draw, and game-over state to Game so main.py can display results while game rules stay separate from input and output.
+- Expanded testing to include board-copy independence, AI board preservation, and every possible human strategy against HardAI playing second.
